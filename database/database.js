@@ -1,15 +1,15 @@
 import { Pool } from "../deps.js";
+import "https://deno.land/x/dotenv/load.ts";
 
 const CONCURRENT_CONNECTIONS = 2;
 const connectionPool = new Pool({
   // add your database configuration here
-  hostname: "castor.db.elephantsql.com",
-  database: "geiqahvt",
-  user: "geiqahvt",
-  password: "Bhe8bt6NpdmGEACZqn2AUVybfYJJ49oh",
+  hostname: Deno.env.get("POSTGRESQL_HOSTNAME"),
+  database: Deno.env.get("POSTGRESQL_DATABASE"),
+  user: Deno.env.get("POSTGRESQL_USER"),
+  password: Deno.env.get("POSTGRESQL_PASSWORD"),
   port: 5432,
 }, CONCURRENT_CONNECTIONS);
-
 const executeQuery = async (query, ...args) => {
   const response = {};
   let client;

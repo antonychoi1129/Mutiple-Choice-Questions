@@ -4,6 +4,7 @@ import { authMiddleware } from "./middlewares/authMiddleware.js";
 import { errorMiddleware } from "./middlewares/errorMiddleware.js";
 import { userMiddleware } from "./middlewares/userMiddleware.js";
 import { router } from "./routes/routes.js";
+import { config } from "https://deno.land/x/dotenv/mod.ts";
 
 const app = new Application();
 const session = new Session();
@@ -22,5 +23,4 @@ if (Deno.args.length > 0) {
 }
 
 app.listen({ port: port });
-
 export { app }
