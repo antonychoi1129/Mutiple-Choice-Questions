@@ -1,5 +1,4 @@
 # Mutiple-Choice-Questions
-https://wsd.cs.aalto.fi/
 
 Application: https://deno-mcq.herokuapp.com/
 
