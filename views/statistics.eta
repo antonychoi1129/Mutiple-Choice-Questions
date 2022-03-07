@@ -1,0 +1,39 @@
+<% layout("./layouts/layout.eta") %>
+
+<h1>Statistics!</h1>
+
+<h2>You have answered:</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Question Id</th>
+            <th>Total number of times of answering</th>
+            <th>Total number of correct answers</th>
+        </tr>
+    </thead>
+    <% it.answeredQuestions.forEach(question => { %>
+    <tr>
+        <td><%= question.question_id %></td>
+        <td><%= question.answer_count %></td>
+        <td><%= question.correct_count %></td>
+    </tr>
+    <% }) %>
+</table>
+    
+<h2>Most answered questions</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>User</th>
+            <th>Answered Questions</th>
+        </tr>
+    </thead>
+    
+    <% it.mostAnsweredQuestions.forEach(stat => { %>
+    <tr>
+        <td><%= stat.email %></td>
+        <td><%= stat.count %></td>
+    </tr>
+    <% }) %>
+</table>
